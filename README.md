@@ -1,4 +1,4 @@
-# 🌿 House-Plant Management API
+# 🌿 leafy - A House-Plant Management API
 
 A fully-typed **Node.js + TypeScript** backend for tracking your house plants, their care schedules, and species data. It exposes a JWT-secured REST API, ships with Docker for friction-free local setup, and serves live Swagger docs.
 
