@@ -142,4 +142,4 @@ PRs welcome! ✨
 
 ## License
 
-MIT © 2025
+[MIT](LICENSE)
