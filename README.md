@@ -14,8 +14,6 @@ A fully-typed **Node.js + TypeScript** backend for tracking your house plants, t
 | **Water logs**        | `POST /plants/:id/water` marks a plant as just watered                                 |
 | **Docs**              | Interactive Swagger UI at **`/docs`**                                                  |
 
-*Future roadmap → reminders, background jobs, OAuth, migrations, tests.*
-
 ---
 
 ## Tech stack
@@ -122,13 +120,21 @@ The script performs an **upsert** on `commonName`, so existing rows are updated,
 
 ---
 
-## Roadmap
+## 🌱 Roadmap
 
+### Plant Care Features
+* [ ] **Watering reminders** — push notifications & email alerts based on plant schedules
+* [ ] **Care task tracking** — fertilizing, repotting, pruning reminders
+* [ ] **Plant health monitoring** — photo uploads & growth tracking
+* [ ] **Smart notifications** — weather-based watering adjustments
+* [ ] **Care history analytics** — visualize plant care patterns over time
+
+### Technical Improvements
 * [ ] Zod validation + error envelope
 * [ ] TypeORM migrations & `synchronize: false` in prod
-* [ ] Water-log history table & reminders
 * [ ] OAuth (Google, GitHub)
 * [ ] Unit & integration tests (Vitest + Supertest)
+* [ ] Background job processing for notifications
 
 PRs welcome! ✨
 
@@ -136,4 +142,4 @@ PRs welcome! ✨
 
 ## License
 
-MIT © 2025 Your Name
+MIT © 2025
