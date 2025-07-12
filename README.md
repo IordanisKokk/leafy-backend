@@ -142,4 +142,4 @@ PRs welcome! ✨
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.md)
