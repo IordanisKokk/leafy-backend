@@ -151,3 +151,39 @@ plantRouter.post("/:id/water", async (req: AuthedRequest, res) => {
   }
   res.json({ wateredAt: now });
 });
+
+/**
+ * @swagger
+ * /plants/{id}/water:
+ *   post:
+ *     summary: Mark a plant as just watered
+ *     tags: [Plants]
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Watering timestamp updated
+ *       404:
+ *         description: Plant not found
+ */
+plantRouter.post("/:id/water", async (req: AuthedRequest, res: Response) => {
+    const now = new Date();
+
+    const result = await AppDataSource.getRepository(Plant).update(
+        { id: req.params.id, owner: { id: req.userId } },
+        { lastWateredAt: now }
+    );
+
+    if (result.affected === 0) {
+        return res.status(404).json({ error: "not found"});
+
+    }
+
+    res.status(200).json({ wateredAt: now})
+});
