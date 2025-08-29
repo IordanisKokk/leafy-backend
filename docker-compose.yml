@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: grwbl_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: grwbl
+      POSTGRES_PASSWORD: grwbl
+      POSTGRES_DB: grwbl_dev
+    volumes:
+      - pgdata:/var/lib/postgresql/data        # ← names the volume
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U grwbl -d grwbl_dev"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: plantapi
+    command: npm run dev
+    depends_on:
+      postgres:
+        condition: service_healthy             # wait for the DB to be ready
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      JWT_SECRET: 32255206463991869490827739096799
+      CORS_ORIGIN: http://localhost:5173
+      DATABASE_URL: postgres://grwbl:grwbl@grwbl_db:5432/grwbl_dev
+
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+# ───────────────────────────────────────────
+# The missing bit ↓
+volumes:
+  pgdata:                                       # creates the named volume
