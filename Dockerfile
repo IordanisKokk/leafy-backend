@@ -14,4 +14,4 @@ COPY --from=build /usr/src/app/package*.json ./
 RUN npm ci --omit=dev
 COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 3000
-CMD ["sh","-c","node dist/scripts/migrate.js && node dist/index.js"]
+CMD ["sh","-c","node dist/scripts/migrate.js && node dist/scripts/seed.js && node dist/index.js"]
