@@ -4,12 +4,12 @@
     "scientificName": "Sansevieria trifasciata",
     "description": "Tolerates very low light and long dry spells; nearly indestructible.",
     "defaultWateringIntervalDays": 14,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "West Africa",
       "isToxicToPets": true,
       "growthRate": "slow",
-      "matureHeightCm": 90
+      "matureSizeCm": 90
     },
     "careInstructions": {
       "light": "low-to-bright indirect",
@@ -25,19 +25,18 @@
     "scientificName": "Monstera deliciosa",
     "description": "Iconic split leaves; enjoys warmth and humidity.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Central America",
       "isToxicToPets": true,
-      "growthRate": "medium-fast",
-      "matureHeightCm": 200
+      "growthRate": "medium",
+      "matureSizeCm": 200
     },
     "careInstructions": {
       "light": "bright indirect",
       "soil": "peaty, well-draining",
       "humidity": "≥60 %",
       "temperatureC": "20-28",
-      "support": "moss pole helps aerial roots",
       "fertilizer": "balanced, twice monthly growing season"
     }
   },
@@ -46,19 +45,19 @@
     "scientificName": "Epipremnum aureum",
     "description": "Easy trailing vine; adapts to most interiors.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Moorea, French Polynesia",
       "isToxicToPets": true,
       "growthRate": "fast",
-      "matureLengthCm": 300
+      "matureSizeCm": 300
     },
     "careInstructions": {
       "light": "low-to-bright indirect",
       "soil": "all-purpose potting mix",
       "humidity": "average",
       "temperatureC": "18-30",
-      "pruning": "pinch tips to keep bushy"
+      "fertilizer": "balanced, twice monthly growing season"
     }
   },
   {
@@ -66,12 +65,12 @@
     "scientificName": "Spathiphyllum wallisii",
     "description": "Graceful white spathes; droops dramatically when thirsty.",
     "defaultWateringIntervalDays": 5,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Colombia/Venezuela",
       "isToxicToPets": true,
       "growthRate": "medium",
-      "matureHeightCm": 60
+      "matureSizeCm": 60
     },
     "careInstructions": {
       "light": "medium indirect",
@@ -87,12 +86,12 @@
     "scientificName": "Ficus elastica",
     "description": "Glossy leaves and tree-like habit.",
     "defaultWateringIntervalDays": 10,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "India/Southeast Asia",
       "isToxicToPets": true,
       "growthRate": "medium",
-      "matureHeightCm": 250
+      "matureSizeCm": 250
     },
     "careInstructions": {
       "light": "bright filtered",
@@ -108,12 +107,12 @@
     "scientificName": "Chlorophytum comosum",
     "description": "Produces arching ‘spiderettes’; very forgiving.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",
       "isToxicToPets": false,
       "growthRate": "fast",
-      "matureLengthCm": 60
+      "matureSizeCm": 60
     },
     "careInstructions": {
       "light": "bright indirect / partial shade",
@@ -128,12 +127,12 @@
     "scientificName": "Zamioculcas zamiifolia",
     "description": "Extremely drought-tolerant; thrives on neglect.",
     "defaultWateringIntervalDays": 21,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "East Africa",
       "isToxicToPets": true,
       "growthRate": "slow",
-      "matureHeightCm": 90
+      "matureSizeCm": 90
     },
     "careInstructions": {
       "light": "low-to-medium",
@@ -148,12 +147,12 @@
     "scientificName": "Ficus lyrata",
     "description": "Large veined leaves; dramatic focal plant.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "West Africa",
       "isToxicToPets": true,
       "growthRate": "medium",
-      "matureHeightCm": 300
+      "matureSizeCm": 300
     },
     "careInstructions": {
       "light": "bright indirect / morning sun",
@@ -169,12 +168,12 @@
     "scientificName": "Aloe barbadensis",
     "description": "Succulent gel used for burns and skincare.",
     "defaultWateringIntervalDays": 14,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Arabian Peninsula",
       "isToxicToPets": true,
       "growthRate": "slow",
-      "matureDiameterCm": 60
+      "matureSizeCm": 60
     },
     "careInstructions": {
       "light": "bright direct / full sun",
@@ -190,12 +189,12 @@
     "scientificName": "Nephrolepis exaltata",
     "description": "Feathery fronds; loves moisture and cool air.",
     "defaultWateringIntervalDays": 3,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Tropical Americas",
       "isToxicToPets": false,
       "growthRate": "medium",
-      "matureDiameterCm": 90
+      "matureSizeCm": 90
     },
     "careInstructions": {
       "light": "medium indirect / dappled shade",
@@ -211,12 +210,12 @@
     "scientificName": "Crassula ovata",
     "description": "Classic succulent; symbolizes prosperity.",
     "defaultWateringIntervalDays": 14,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",
       "isToxicToPets": true,
       "growthRate": "slow",
-      "matureHeightCm": 120
+      "matureSizeCm": 120
     },
     "careInstructions": {
       "light": "bright direct / partial sun",
@@ -232,20 +231,19 @@
     "scientificName": "Philodendron hederaceum",
     "description": "Heart-leaf vine; forgiving and fast.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Central & South America",
       "isToxicToPets": true,
       "growthRate": "fast",
-      "matureLengthCm": 300
+      "matureSizeCm": 300
     },
     "careInstructions": {
       "light": "medium-to-bright indirect",
       "soil": "airy, peat-based",
       "humidity": "average",
       "temperatureC": "18-30",
-      "fertilizer": "balanced, monthly",
-      "pruning": "pinch tips for fullness"
+      "fertilizer": "balanced, monthly"
     }
   },
   {
@@ -253,12 +251,12 @@
     "scientificName": "Hedera helix",
     "description": "Classic climbing vine; cool-loving.",
     "defaultWateringIntervalDays": 5,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Europe/Western Asia",
       "isToxicToPets": true,
       "growthRate": "fast",
-      "matureLengthCm": 1000
+      "matureSizeCm": 1000
     },
     "careInstructions": {
       "light": "bright indirect / partial shade",
@@ -273,12 +271,12 @@
     "scientificName": "Dracaena marginata",
     "description": "Slim palm-like canes with spiky tufts.",
     "defaultWateringIntervalDays": 10,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Madagascar",
       "isToxicToPets": true,
       "growthRate": "medium",
-      "matureHeightCm": 200
+      "matureSizeCm": 200
     },
     "careInstructions": {
       "light": "medium indirect",
@@ -294,12 +292,12 @@
     "scientificName": "Strelitzia reginae",
     "description": "Tropical leaves; can flower indoors with strong light.",
     "defaultWateringIntervalDays": 7,
-        "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",
       "isToxicToPets": true,
       "growthRate": "medium",
-      "matureHeightCm": 200
+      "matureSizeCm": 200
     },
     "careInstructions": {
       "light": "bright direct / full sun",

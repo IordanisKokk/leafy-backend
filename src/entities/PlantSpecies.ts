@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { CareInstructions, SpeciesProperties } from '../types/species';
 
 @Entity()
 export class PlantSpecies {
@@ -20,9 +21,9 @@ export class PlantSpecies {
     @Column({ nullable: true })
     imageUrl?: string;
 
-    @Column({ type: 'jsonb', nullable: true })
-    properties?: Record<string, any>;
+    @Column({ type: "jsonb", nullable: false })
+    properties!: SpeciesProperties;
 
-    @Column({ type: 'jsonb', nullable: true })
-    careInstructions?: Record<string, any>;
+    @Column({ type: "jsonb", nullable: false })
+    careInstructions!: CareInstructions;
 }
