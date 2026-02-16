@@ -22,8 +22,14 @@ export class Plant {
     @Column({ type: "timestamptz", nullable: true })
     lastWateredAt?: Date;
 
-    @Column({ type: "jsonb", nullable: true })
-    properties?: Record<string, any>;
+    @Column({ nullable: true })
+    room?: string;
+
+    @Column({ nullable: true })
+    location?: string;
+
+    @Column({ nullable: true })
+    notes?: string;
 
     @Column({ type: "jsonb", nullable: true })
     careInstructions?: Record<string, any>;

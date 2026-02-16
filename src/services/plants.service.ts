@@ -16,7 +16,9 @@ export class PlantService {
         speciesId: string,
         ownerId: string,
         wateringIntervalDays?: number,
-        properties?: Record<string, any>,
+        room?: string,
+        location?: string,
+        notes?: string,
         careInstructions?: Record<string, any>,
     ) {
 
@@ -43,8 +45,10 @@ export class PlantService {
             species,
             wateringIntervalDays:
                 wateringIntervalDays ?? species.defaultWateringIntervalDays,
-            properties,
             careInstructions,
+            room,
+            location,
+            notes,
             owner,
         });
 
@@ -153,7 +157,9 @@ export class PlantService {
         const {
             name,
             wateringIntervalDays,
-            properties,
+            room,
+            location,
+            notes,
             careInstructions,
         } = updateData;
 
@@ -167,7 +173,9 @@ export class PlantService {
 
         if (name !== undefined) plant.name = name;
         if (wateringIntervalDays !== undefined) plant.wateringIntervalDays = wateringIntervalDays;
-        if (properties !== undefined) plant.properties = properties;
+        if (room !== undefined) plant.room = room;
+        if (location !== undefined) plant.location = location;
+        if (notes !== undefined) plant.notes = notes;
         if (careInstructions !== undefined) plant.careInstructions = careInstructions;
 
         return { success: true, plant: await repo.save(plant) };
