@@ -11,7 +11,7 @@ export const PlantsController = {
                 return res.status(401).json({ error: "unauthorized" });
             }
 
-            const { name, speciesId, wateringIntervalDays, properties, careInstructions } = req.body ?? {};
+            const { name, speciesId, wateringIntervalDays, lastWateredAt, room, location, notes, careInstructions } = req.body ?? {};
             if (!name || !speciesId) {
                 return res.status(422).json({ error: "validation_error", fields: ["name", "speciesId"] });
             }
@@ -21,7 +21,10 @@ export const PlantsController = {
                 speciesId,
                 req.userId,               // now safely a string
                 wateringIntervalDays,
-                properties,
+                lastWateredAt,
+                room,
+                location,
+                notes,
                 careInstructions
             );
             return res.status(201).json(data);
@@ -50,7 +53,7 @@ export const PlantsController = {
         } catch (error) {
             console.error("Error fetching plant:", error);
             res.status(500).json({ error: "internal_server_error" });
-        }
+        } 
     },
 
     async waterNow(req: AuthedRequest, res: Response) {

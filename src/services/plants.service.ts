@@ -16,6 +16,7 @@ export class PlantService {
         speciesId: string,
         ownerId: string,
         wateringIntervalDays?: number,
+        lastWateredAt?: Date,
         room?: string,
         location?: string,
         notes?: string,
@@ -39,12 +40,16 @@ export class PlantService {
             return { error: "user not_found" };
         }
 
+        console.log("[LOG] Creating plant with name:", name, "speciesId:", speciesId, "ownerId:", ownerId);
+        console.log("[LOG] Additional details - wateringIntervalDays:", wateringIntervalDays, "room:", room, "location:", location, "notes:", notes);
+
         const repo = this.dataSource.getRepository(Plant);
         const plant = repo.create({
             name,
             species,
             wateringIntervalDays:
                 wateringIntervalDays ?? species.defaultWateringIntervalDays,
+            lastWateredAt, 
             careInstructions,
             room,
             location,
