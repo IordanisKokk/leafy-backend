@@ -3,7 +3,7 @@
     "commonName": "Snake Plant",
     "scientificName": "Sansevieria trifasciata",
     "description": "Tolerates very low light and long dry spells; nearly indestructible.",
-    "defaultWateringIntervalDays": 14,
+    "defaultWateringFrequencyDays": 14,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "West Africa",
@@ -24,7 +24,7 @@
     "commonName": "Monstera",
     "scientificName": "Monstera deliciosa",
     "description": "Iconic split leaves; enjoys warmth and humidity.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Central America",
@@ -44,7 +44,7 @@
     "commonName": "Pothos",
     "scientificName": "Epipremnum aureum",
     "description": "Easy trailing vine; adapts to most interiors.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Moorea, French Polynesia",
@@ -64,7 +64,7 @@
     "commonName": "Peace Lily",
     "scientificName": "Spathiphyllum wallisii",
     "description": "Graceful white spathes; droops dramatically when thirsty.",
-    "defaultWateringIntervalDays": 5,
+    "defaultWateringFrequencyDays": 5,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Colombia/Venezuela",
@@ -85,7 +85,7 @@
     "commonName": "Rubber Plant",
     "scientificName": "Ficus elastica",
     "description": "Glossy leaves and tree-like habit.",
-    "defaultWateringIntervalDays": 10,
+    "defaultWateringFrequencyDays": 10,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "India/Southeast Asia",
@@ -106,7 +106,7 @@
     "commonName": "Spider Plant",
     "scientificName": "Chlorophytum comosum",
     "description": "Produces arching ‘spiderettes’; very forgiving.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",
@@ -126,7 +126,7 @@
     "commonName": "ZZ Plant",
     "scientificName": "Zamioculcas zamiifolia",
     "description": "Extremely drought-tolerant; thrives on neglect.",
-    "defaultWateringIntervalDays": 21,
+    "defaultWateringFrequencyDays": 21,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "East Africa",
@@ -146,7 +146,7 @@
     "commonName": "Fiddle Leaf Fig",
     "scientificName": "Ficus lyrata",
     "description": "Large veined leaves; dramatic focal plant.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "West Africa",
@@ -167,7 +167,7 @@
     "commonName": "Aloe Vera",
     "scientificName": "Aloe barbadensis",
     "description": "Succulent gel used for burns and skincare.",
-    "defaultWateringIntervalDays": 14,
+    "defaultWateringFrequencyDays": 14,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Arabian Peninsula",
@@ -188,7 +188,7 @@
     "commonName": "Boston Fern",
     "scientificName": "Nephrolepis exaltata",
     "description": "Feathery fronds; loves moisture and cool air.",
-    "defaultWateringIntervalDays": 3,
+    "defaultWateringFrequencyDays": 3,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Tropical Americas",
@@ -209,7 +209,7 @@
     "commonName": "Jade Plant",
     "scientificName": "Crassula ovata",
     "description": "Classic succulent; symbolizes prosperity.",
-    "defaultWateringIntervalDays": 14,
+    "defaultWateringFrequencyDays": 14,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",
@@ -230,7 +230,7 @@
     "commonName": "Philodendron",
     "scientificName": "Philodendron hederaceum",
     "description": "Heart-leaf vine; forgiving and fast.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Central & South America",
@@ -250,7 +250,7 @@
     "commonName": "English Ivy",
     "scientificName": "Hedera helix",
     "description": "Classic climbing vine; cool-loving.",
-    "defaultWateringIntervalDays": 5,
+    "defaultWateringFrequencyDays": 5,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Europe/Western Asia",
@@ -270,7 +270,7 @@
     "commonName": "Dracaena",
     "scientificName": "Dracaena marginata",
     "description": "Slim palm-like canes with spiky tufts.",
-    "defaultWateringIntervalDays": 10,
+    "defaultWateringFrequencyDays": 10,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "Madagascar",
@@ -291,7 +291,7 @@
     "commonName": "Bird of Paradise",
     "scientificName": "Strelitzia reginae",
     "description": "Tropical leaves; can flower indoors with strong light.",
-    "defaultWateringIntervalDays": 7,
+    "defaultWateringFrequencyDays": 7,
     "imageUrl": "https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "properties": {
       "nativeRegion": "South Africa",

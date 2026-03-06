@@ -36,7 +36,7 @@ const PlantSpeciesSeedSchema = z.object({
   commonName: z.string().min(1),
   scientificName: z.string().min(1),
   description: z.string().optional(),
-  defaultWateringIntervalDays: z.number().int().positive().optional(),
+  defaultWateringFrequencyDays: z.number().int().positive().optional(),
   imageUrl: z.string().min(1).optional(),
   properties: SpeciesPropertiesSchema,
   careInstructions: CareInstructionsSchema,
@@ -60,7 +60,7 @@ async function main() {
     // 3) normalize defaults so you don't rely on entity defaults implicitly
     const normalized = speciesArr.map((s) => ({
       ...s,
-      defaultWateringIntervalDays: s.defaultWateringIntervalDays ?? 7,
+      defaultWateringFrequencyDays: s.defaultWateringFrequencyDays ?? 7,
     }));
 
     const repo = AppDataSource.getRepository(PlantSpecies);

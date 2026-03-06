@@ -10,7 +10,7 @@ export interface NextWateringResult {
 export interface HasWateringFields {
   id: string;
   lastWateredAt?: Date | null;
-  wateringIntervalDays: number;
+  wateringFrequencyDays: number;
 }
 
 export function computeNextWatering(plant: HasWateringFields): NextWateringResult {
@@ -18,7 +18,7 @@ export function computeNextWatering(plant: HasWateringFields): NextWateringResul
     return { plantId: plant.id, nextWatering: new Date(Date.now()), daysRemaining: 0 };
   }
 
-  const dueDate = new Date(plant.lastWateredAt.getTime() + plant.wateringIntervalDays * MS_PER_DAY);
+  const dueDate = new Date(plant.lastWateredAt.getTime() + plant.wateringFrequencyDays * MS_PER_DAY);
   const daysRemaining = Math.ceil((dueDate.getTime() - Date.now()) / MS_PER_DAY);
 
   return { plantId: plant.id, nextWatering: dueDate, daysRemaining };

@@ -4,7 +4,7 @@ export type PlantSpeciesSeed = {
   commonName: string;
   scientificName: string;
   description?: string;
-  defaultWateringIntervalDays?: number;
+  defaultWateringFrequencyDays?: number;
   imageUrl?: string;
   properties: SpeciesProperties;
   careInstructions: CareInstructions;

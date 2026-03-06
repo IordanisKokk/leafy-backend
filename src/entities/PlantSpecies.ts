@@ -16,7 +16,7 @@ export class PlantSpecies {
     description?: string;
 
     @Column({ type: "int", default: 7 })
-    defaultWateringIntervalDays!: number;
+    defaultWateringFrequencyDays!: number;
     
     @Column({ nullable: true })
     imageUrl?: string;

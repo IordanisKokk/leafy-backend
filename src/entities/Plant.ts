@@ -17,7 +17,7 @@ export class Plant {
     name!: string;
 
     @Column({ type: "int" })
-    wateringIntervalDays!: number;
+    wateringFrequencyDays!: number;
 
     @Column({ type: "timestamptz", nullable: true })
     lastWateredAt?: Date;
