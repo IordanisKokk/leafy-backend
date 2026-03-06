@@ -23,7 +23,7 @@ plantRouter.use(auth_middleware);
  *                 type: string
  *               speciesId:
  *                 type: string
- *               wateringIntervalDays:
+ *               WateringFrequencyDays:
  *                 type: integer
  *               properties:
  *                 type: object
@@ -130,6 +130,56 @@ plantRouter.post("/water/:id", PlantsController.waterNow);
  *         description: Plant not found
  */
 plantRouter.delete("/:id", PlantsController.delete);
+
+/**
+ * @swagger
+ * /plants/{id}:
+ *   patch:
+ *     summary: Update a specific plant by ID
+ *     tags: [Plants]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               plantId:
+ *                 type: string
+ *               name:
+ *                 type: string
+ *               WateringFrequencyDays:
+ *                 type: integer
+ *               properties:
+ *                 type: object
+ *                 additionalProperties: true
+ *               careInstructions:
+ *                 type: object
+ *                 additionalProperties: true
+ *     responses:
+ *       '200':
+ *         description: Plant updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 plant:
+ *                   $ref: '#/components/schemas/Plant'
+ *       '404':
+ *         description: Plant not found
+ *       '500':
+ *         description: Internal server error
+ */
+plantRouter.patch("/:id", PlantsController.update);
 
 /**
  * @swagger

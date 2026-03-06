@@ -11,7 +11,7 @@ export const PlantsController = {
                 return res.status(401).json({ error: "unauthorized" });
             }
 
-            const { name, speciesId, wateringIntervalDays, lastWateredAt, room, location, notes, careInstructions } = req.body ?? {};
+            const { name, speciesId, WateringFrequencyDays, lastWateredAt, room, location, notes, careInstructions } = req.body ?? {};
             if (!name || !speciesId) {
                 return res.status(422).json({ error: "validation_error", fields: ["name", "speciesId"] });
             }
@@ -20,7 +20,7 @@ export const PlantsController = {
                 name,
                 speciesId,
                 req.userId,               // now safely a string
-                wateringIntervalDays,
+                WateringFrequencyDays,
                 lastWateredAt,
                 room,
                 location,
@@ -53,7 +53,7 @@ export const PlantsController = {
         } catch (error) {
             console.error("Error fetching plant:", error);
             res.status(500).json({ error: "internal_server_error" });
-        } 
+        }
     },
 
     async waterNow(req: AuthedRequest, res: Response) {
@@ -116,9 +116,10 @@ export const PlantsController = {
     },
 
     async delete(req: AuthedRequest, res: Response) {
+        console.log("Delete plant request received with plantId:", req.params.id);
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
+            const plantId = req.params.id;
             const ok = await plantService.delete(userId, plantId)
             if (!ok) return res.status(404).json({ error: "not_found" });
             res.status(204).send()
@@ -131,14 +132,18 @@ export const PlantsController = {
     async update(req: AuthedRequest, res: Response) {
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
+            const plantId = req.params.id;
             const updatedPlantData = {
-                name: req.body.name,
-                wateringIntervalDays: req.body.wateringIntervalDays,
-                properties: req.body.properties,
-                careInstructions: req.body.careInstructions,
+                name: req.body.name || undefined,
+                room: req.body.room || undefined,
+                location: req.body.location || undefined,
+                wateringFrequencyDays: req.body.wateringFrequencyDays || undefined,
+                lastWateredAt: req.body.lastWateredAt || undefined,
+                notes: req.body.notes || undefined,
             };
+            console.log("Update plant request received with data:", updatedPlantData);
             const data = await plantService.update(userId, plantId, updatedPlantData)
+            console.log("Updated plant data:", data);
             res.status(200).json(data);
         } catch (error) {
             console.error("Error updating plant:", error);

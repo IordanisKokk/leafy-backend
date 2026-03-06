@@ -15,7 +15,7 @@ export class PlantService {
         name: string,
         speciesId: string,
         ownerId: string,
-        wateringIntervalDays?: number,
+        wateringFrequencyDays?: number,
         lastWateredAt?: Date,
         room?: string,
         location?: string,
@@ -41,14 +41,14 @@ export class PlantService {
         }
 
         console.log("[LOG] Creating plant with name:", name, "speciesId:", speciesId, "ownerId:", ownerId);
-        console.log("[LOG] Additional details - wateringIntervalDays:", wateringIntervalDays, "room:", room, "location:", location, "notes:", notes);
+        console.log("[LOG] Additional details - WateringFrequencyDays:", wateringFrequencyDays, "room:", room, "location:", location, "notes:", notes);
 
         const repo = this.dataSource.getRepository(Plant);
         const plant = repo.create({
             name,
             species,
-            wateringIntervalDays:
-                wateringIntervalDays ?? species.defaultWateringIntervalDays,
+            wateringFrequencyDays:
+                wateringFrequencyDays ?? species.defaultWateringFrequencyDays,
             lastWateredAt, 
             careInstructions,
             room,
@@ -139,7 +139,7 @@ export class PlantService {
             }
 
             const dueDate = new Date(plant.lastWateredAt.getTime() +
-                plant.wateringIntervalDays * 24 * 60 * 60 * 1000);
+                plant.wateringFrequencyDays * 24 * 60 * 60 * 1000);
 
             return dueDate < new Date();
         });
@@ -161,7 +161,8 @@ export class PlantService {
     async update(ownerId: string, plantId: string, updateData: Partial<Plant>) {
         const {
             name,
-            wateringIntervalDays,
+            wateringFrequencyDays,
+            lastWateredAt,
             room,
             location,
             notes,
@@ -177,12 +178,13 @@ export class PlantService {
         }
 
         if (name !== undefined) plant.name = name;
-        if (wateringIntervalDays !== undefined) plant.wateringIntervalDays = wateringIntervalDays;
+        if (wateringFrequencyDays !== undefined) plant.wateringFrequencyDays = wateringFrequencyDays;
+        if (lastWateredAt !== undefined) plant.lastWateredAt = lastWateredAt;
         if (room !== undefined) plant.room = room;
         if (location !== undefined) plant.location = location;
         if (notes !== undefined) plant.notes = notes;
         if (careInstructions !== undefined) plant.careInstructions = careInstructions;
-
+        console.log("Saving updated plant:", plant);
         return { success: true, plant: await repo.save(plant) };
     }
 }
