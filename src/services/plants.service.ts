@@ -1,8 +1,5 @@
-import { Response } from "express";
-import AppDataSource from "../data-source";
 import { Plant } from "../entities/Plant";
 import { WateringLog } from "../entities/WateringLog";
-import { AuthedRequest } from "../middleware/auth";
 import { PlantSpecies } from "../entities/PlantSpecies";
 import { computeNextWatering } from "./schedule.service";
 import { User } from "../entities/User";
@@ -37,7 +34,7 @@ export class PlantService {
         const owner = await userRepo.findOneBy({ id: ownerId });
 
         if (!owner) {
-            return { error: "user not_found" };
+            return { error: "user_not_found" };
         }
 
         console.log("[LOG] Creating plant with name:", name, "speciesId:", speciesId, "ownerId:", ownerId);
@@ -74,25 +71,23 @@ export class PlantService {
         });
 
         if (!plant) {
-            return { error: "not found" };
+            return { error: "not_found" };
         }
         return plant;
     }
 
-    async waterNow(ownerId: string, plantId: string) {
-        const now = new Date();
-
+    async waterNow(ownerId: string, plantId: string, wateredAt: Date) {
         const result = await this.dataSource.getRepository(Plant).update(
             { id: plantId, owner: { id: ownerId } },
-            { lastWateredAt: now }
+            { lastWateredAt: wateredAt }
         );
         if (result.affected === 0) {
-            return { error: "not found" };
+            return { error: "not_found" };
         }
 
         const waterRepo = this.dataSource.getRepository(WateringLog);
-        await waterRepo.save(waterRepo.create({ plant: { id: plantId } }));
-        return { wateredAt: now };
+        await waterRepo.save(waterRepo.create({ plant: { id: plantId }, timestamp: wateredAt }));
+        return { wateredAt: wateredAt };
     }
 
     async scheduleNext(ownerId: string) {
@@ -106,7 +101,7 @@ export class PlantService {
         const plant = await this.dataSource.getRepository(Plant).findOne({
             where: { id: plantId, owner: { id: ownerId } },
         });
-        if (!plant) return { error: "not found" }; // or throw for 404 at controller
+        if (!plant) return { error: "not_found" };
         return computeNextWatering(plant);
     }
 
@@ -114,7 +109,7 @@ export class PlantService {
         const plant = await this.dataSource.getRepository(Plant).findOne({
             where: { id: plantId, owner: { id: ownerId } }
         });
-        if (!plant) return { error: "not found" };
+        if (!plant) return { error: "not_found" };
 
         const logs = await this.dataSource.getRepository(WateringLog).find({
             where: { plant: { id: plant.id } },
@@ -128,10 +123,6 @@ export class PlantService {
         const plants = await this.dataSource.getRepository(Plant).find({
             where: { owner: { id: ownerId } },
         });
-
-        if (plants.length === 0) {
-            return { error: "no plants found" };
-        }
 
         const overduePlants = plants.filter(plant => {
             if (!plant.lastWateredAt) {
@@ -153,7 +144,7 @@ export class PlantService {
             owner: { id: ownerId }
         });
         if (result.affected === 0) {
-            return { error: "not found" };
+            return { error: "not_found" };
         }
         return { success: true };
     }
@@ -174,7 +165,7 @@ export class PlantService {
             where: { id: plantId, owner: { id: ownerId } },
         });
         if (!plant) {
-            return { error: "not found" };
+            return { error: "not_found" };
         }
 
         if (name !== undefined) plant.name = name;

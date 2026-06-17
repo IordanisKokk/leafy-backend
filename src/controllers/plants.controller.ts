@@ -4,6 +4,27 @@ import { AuthedRequest } from "../middleware/auth";
 import { PlantService } from "../services/plants.service"
 
 const plantService = new PlantService(AppDataSource);
+
+type ServiceError = { error: string };
+
+function isServiceError(value: unknown): value is ServiceError {
+    return typeof value === "object" && value !== null && "error" in value;
+}
+
+function sendServiceError(res: Response, error: ServiceError) {
+    switch (error.error) {
+        case "bad_request":
+            return res.status(400).json(error);
+        case "species_not_found":
+        case "not_found":
+            return res.status(404).json(error);
+        case "user_not_found":
+            return res.status(401).json({ error: "unauthorized" });
+        default:
+            return res.status(500).json({ error: "internal_server_error" });
+    }
+}
+
 export const PlantsController = {
     async create(req: AuthedRequest, res: Response) {
         try {
@@ -27,6 +48,9 @@ export const PlantsController = {
                 notes,
                 careInstructions
             );
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             return res.status(201).json(data);
         } catch (error) {
             console.error("Error creating plant:", error);
@@ -47,8 +71,11 @@ export const PlantsController = {
     async getById(req: AuthedRequest, res: Response) {
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
+            const plantId = req.params.id;
             const data = await plantService.getById(userId, plantId)
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             res.status(200).json(data);
         } catch (error) {
             console.error("Error fetching plant:", error);
@@ -59,8 +86,18 @@ export const PlantsController = {
     async waterNow(req: AuthedRequest, res: Response) {
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
-            const data = await plantService.waterNow(userId, plantId)
+            const plantId = req.params.id;
+            if (!plantId) {
+                return res.status(400).json({ error: "missing_plant_id" });
+            }
+            const wateredAt = req.body.wateredAt ? new Date(req.body.wateredAt) : new Date();
+            if (isNaN(wateredAt.getTime())) {
+                return res.status(400).json({ error: "invalid_watered_at" });
+            }
+            const data = await plantService.waterNow(userId, plantId, wateredAt)
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             res.status(200).json(data);
         } catch (error) {
             console.error("Error watering plant:", error);
@@ -83,8 +120,11 @@ export const PlantsController = {
     async scheduleNextById(req: AuthedRequest, res: Response) {
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
+            const plantId = req.params.id;
             const data = await plantService.scheduleNextById(userId, plantId)
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             res.status(200).json(data);
         } catch (error) {
             console.error("Error scheduling next watering:", error);
@@ -95,8 +135,11 @@ export const PlantsController = {
     async getHistory(req: AuthedRequest, res: Response) {
         try {
             const userId = req.userId!;
-            const plantId = req.body.plantId;
+            const plantId = req.params.id;
             const data = await plantService.getHistory(userId, plantId)
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             res.status(200).json(data);
         } catch (error) {
             console.error("Error fetching watering history:", error);
@@ -121,7 +164,9 @@ export const PlantsController = {
             const userId = req.userId!;
             const plantId = req.params.id;
             const ok = await plantService.delete(userId, plantId)
-            if (!ok) return res.status(404).json({ error: "not_found" });
+            if (isServiceError(ok)) {
+                return sendServiceError(res, ok);
+            }
             res.status(204).send()
         } catch (error) {
             console.error("Error deleting plant:", error);
@@ -140,9 +185,13 @@ export const PlantsController = {
                 wateringFrequencyDays: req.body.wateringFrequencyDays || undefined,
                 lastWateredAt: req.body.lastWateredAt || undefined,
                 notes: req.body.notes || undefined,
+                careInstructions: req.body.careInstructions || undefined,
             };
             console.log("Update plant request received with data:", updatedPlantData);
             const data = await plantService.update(userId, plantId, updatedPlantData)
+            if (isServiceError(data)) {
+                return sendServiceError(res, data);
+            }
             console.log("Updated plant data:", data);
             res.status(200).json(data);
         } catch (error) {
