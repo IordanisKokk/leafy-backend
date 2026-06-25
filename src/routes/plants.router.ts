@@ -109,7 +109,7 @@ plantRouter.get("/:id", PlantsController.getById);
  *       404:
  *         description: Plant not found
  */
-plantRouter.post("/water/:id", PlantsController.waterNow);
+plantRouter.post("/:id/water", PlantsController.waterNow);
 
 /**
  * @swagger
