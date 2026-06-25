@@ -77,20 +77,28 @@ export class PlantService {
     }
 
     async waterNow(ownerId: string, plantId: string, wateredAt: Date) {
-        const result = await this.dataSource.getRepository(Plant).update(
-            { id: plantId, owner: { id: ownerId } },
-            { lastWateredAt: wateredAt }
-        );
-        if (result.affected === 0) {
-            return { error: "not_found" };
-        }
+        return this.dataSource.transaction(async (manager) => {
+            const plantRepo = manager.getRepository(Plant);
+            const waterRepo = manager.getRepository(WateringLog);
 
-        const waterRepo = this.dataSource.getRepository(WateringLog);
-        await waterRepo.save(waterRepo.create({ plant: { id: plantId }, timestamp: wateredAt }));
-        return { 
-            plantId: plantId,
-            wateredAt: wateredAt
-        };
+            const result = await plantRepo.update(
+                { id: plantId, owner: { id: ownerId } },
+                { lastWateredAt: wateredAt }
+            );
+
+            if (result.affected === 0) {
+                return { error: "not_found" };
+            }
+
+            await waterRepo.save(
+                waterRepo.create({
+                    plant: { id: plantId },
+                    timestamp: wateredAt,
+                })
+            );
+
+            return { plantId, wateredAt };
+        })
     }
 
     async scheduleNext(ownerId: string) {
