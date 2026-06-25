@@ -289,4 +289,4 @@ plantRouter.get("/schedule/overdue", PlantsController.scheduleOverdue);
  *       '500':
  *         description: Internal server error
  */
-plantRouter.get("/history/:id", PlantsController.getHistory);
+plantRouter.get("/:id/watering-history", PlantsController.getHistory);
