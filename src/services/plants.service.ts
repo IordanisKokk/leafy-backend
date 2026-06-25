@@ -87,7 +87,10 @@ export class PlantService {
 
         const waterRepo = this.dataSource.getRepository(WateringLog);
         await waterRepo.save(waterRepo.create({ plant: { id: plantId }, timestamp: wateredAt }));
-        return { wateredAt: wateredAt };
+        return { 
+            plantId: plantId,
+            wateredAt: wateredAt
+        };
     }
 
     async scheduleNext(ownerId: string) {
