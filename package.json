@@ -8,7 +8,9 @@
     "start": "node dist/index.js",
     "migrate": "node dist/scripts/migrate.js",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "seed:species": "node dist/scripts/seedSpecies.js"
+    "seed:species": "node dist/scripts/seedSpecies.js",
+    "seed:alpha-user": "node dist/scripts/seedAlphaUser.js",
+    "seed:bootstrap": "npm run seed:species && npm run seed:alpha-user"
   },
   "repository": {
     "type": "git",
